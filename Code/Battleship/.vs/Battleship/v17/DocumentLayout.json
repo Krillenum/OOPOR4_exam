@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{183DE542-9E12-494A-814F-A3DC6EED2973}|Battleship\\Battleship.vcxproj|C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Boat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{183DE542-9E12-494A-814F-A3DC6EED2973}|Battleship\\Battleship.vcxproj|solutionrelative:Battleship\\Boat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{183DE542-9E12-494A-814F-A3DC6EED2973}|Battleship\\Battleship.vcxproj|C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Battleship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{183DE542-9E12-494A-814F-A3DC6EED2973}|Battleship\\Battleship.vcxproj|solutionrelative:Battleship\\Battleship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Boat.h",
+              "DocumentMoniker": "C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Boat.h",
+              "RelativeDocumentMoniker": "Battleship\\Boat.h",
+              "ToolTip": "C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Boat.h",
+              "RelativeToolTip": "Battleship\\Boat.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-26T22:10:29.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Battleship.cpp",
               "DocumentMoniker": "C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Battleship.cpp",
               "RelativeDocumentMoniker": "Battleship\\Battleship.cpp",
               "ToolTip": "C:\\Users\\Krillenum (Mat)\\Desktop\\Work Asset\\Modules\\Object oriented programming\\OOPRO4\\Exam\\OOPOR4_exam\\Code\\Battleship\\Battleship\\Battleship.cpp",
               "RelativeToolTip": "Battleship\\Battleship.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAgwDYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-24T09:38:12.04Z",
               "EditorCaption": ""

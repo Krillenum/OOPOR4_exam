@@ -1,20 +1,97 @@
-// Battleship.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <Windows.h>
+#include "Model.h"
+#include "View.h"
+#include "Controller.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    HANDLE hConsole;
+    int k;
+
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    int color;
+
+    // you can loop k higher to see more color choices
+    
+    //for (k = 1; k < 255; k++)
+    //{
+    //    // pick the colorattribute k you want
+    //    SetConsoleTextAttribute(hConsole, k);
+    //    cout << k << " I want to be nice today!" << endl;
+    //}
+    //cout << " ";
+    //
+    //
+    //for (k = 0; k < 6; k++)
+    //{
+    //    
+    //    if (k == 4) {
+
+    //        color = 73; // very red, for hits
+    //    }
+    //    else if (k == 2) {
+
+    //        color = 20; // red, for miss
+    //    }
+    //    else {
+    //        color = 31; // white, for empty
+    //    }
+    //    SetConsoleTextAttribute(hConsole, color);
+
+    //    if (k == 4) {
+    //        cout << "X " << endl;
+    //    }
+    //    else {
+    //        cout << "o " << endl;
+    //    }
+    //}
+
+    string sArray[5][5] = {
+        {"o", "o", "o", "o", "o"},
+        {"o", "X", "o", "o", "o"},
+        {"o", "o", "o", "o", "o"},
+        {"o", "o", "o", "X", "o"},
+        {"o", "o", "o", "o", "o"}
+    };
+
+    for (int i = 0; i < 5; i++) {
+
+        for (int j = 0; j < 5; j++) {
+
+            if (i == 4 && j == 0) {
+                color = 20; // miss
+            }
+            else if (sArray[i][j] == "o") {
+                color = 31; // No shot
+            }
+            else if (sArray[i][j] == "X") {
+                color = 64; // HIT !
+            }
+            else {
+                color = 31;
+            }
+            cout.width(2);
+            SetConsoleTextAttribute(hConsole, color);
+            cout << sArray[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cin.get(); // wait
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+class Test 
+{
+protected:
+    virtual void PrintStuff() { cout << "Yo, stuff"; }
+};
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+class InheritTest : Test
+{
+protected:
+    void PrintStuff() { cout << "inherit stuff"; }
+};

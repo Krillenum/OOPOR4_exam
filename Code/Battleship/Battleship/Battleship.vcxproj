@@ -128,6 +128,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battleship.cpp" />
+    <ClCompile Include="BoatManager.cpp" />
+    <ClCompile Include="BotAI.cpp" />
+    <ClCompile Include="BotStrategy.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PlayerInfo.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="View.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boat.h" />
+    <ClInclude Include="BoatManager.h" />
+    <ClInclude Include="BotAI.h" />
+    <ClInclude Include="BotStrategy.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="PlayerInfo.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
