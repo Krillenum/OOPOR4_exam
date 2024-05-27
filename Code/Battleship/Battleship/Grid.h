@@ -2,6 +2,11 @@
 #include "Tile.h"
 #include "BoatManager.h"
 
+struct DoubleArray
+{
+	Tile* arr[10][10];
+};
+
 class Grid
 {
 public:
@@ -13,21 +18,24 @@ public:
 
 	// Getters and Setters
 	void SetPlayerGrid(Tile* newGrid[10][10]);
-	Tile* GetPlayerGrid();
+	DoubleArray GetPlayerGrid();
 	void SetPlayerHistory(Tile* newGrid[10][10]);
-	Tile* GetPlayerHistory();
+	DoubleArray GetPlayerHistory();
 	void SetBotGrid(Tile* newGrid[10][10]);
-	Tile* GetBotGrid();
+	DoubleArray GetBotGrid();
 	void SetBotHistory(Tile* newGrid[10][10]);
-	Tile* GetBotHistory();
+	DoubleArray GetBotHistory();
 	BoatManager* GetBoatManager();
 
 private:
 	// PRIVATE VARIABLES
-	Tile* playerGrid[10][10];
-	Tile* playerHistory[10][10];
-	Tile* botGrid[10][10];
-	Tile* botHistory[10][10];
-	BoatManager* bm;
-};
+	DoubleArray playerGrid;
+	DoubleArray playerHistory;
+	DoubleArray botGrid;
+	DoubleArray botHistory;
 
+	BoatManager* bm;
+
+	// PRIVATE FUNCTION
+	void initializeGrid(DoubleArray grid);
+};

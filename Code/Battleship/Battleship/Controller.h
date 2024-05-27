@@ -2,7 +2,9 @@
 #include "Model.h"
 #include "View.h"
 #include "BotAI.h"
-#include "string.h"
+#include <string>
+
+using namespace std;
 
 class Controller
 {

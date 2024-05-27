@@ -5,7 +5,7 @@ class BoatManager
 {
 public:
 	// PUBLIC FUNCTION -------------------
-	Boat Init();
+	Boat* Init();
 	void PlaceBoat();
 	void MoveBoat();
 	void RotateBoat();

@@ -1,4 +1,5 @@
 #include "Tile.h"
+#include "Boat.h"
 
 void RotationTile::SpecialEffect()
 {
@@ -6,7 +7,7 @@ void RotationTile::SpecialEffect()
 
 BoatManager* RotationTile::GetBoatManager()
 {
-	return nullptr;
+	return bm;
 }
 
 void AngelTile::SpecialEffect()
@@ -15,7 +16,7 @@ void AngelTile::SpecialEffect()
 
 BoatManager* AngelTile::GetBoatManager()
 {
-	return nullptr;
+	return bm;
 }
 
 void MovementTile::SpecialEffect()
@@ -24,7 +25,7 @@ void MovementTile::SpecialEffect()
 
 BoatManager* MovementTile::GetBoatManager()
 {
-	return nullptr;
+	return bm;
 }
 
 void PowerTile::SpecialEffect()
@@ -35,24 +36,37 @@ void MineTile::SpecialEffect()
 {
 }
 
+Tile::Tile()
+{
+	hit = false;
+	boat = nullptr;
+}
+
 void Tile::SpecialEffect()
 {
 }
 
 bool Tile::GetHit()
 {
-	return false;
+	return hit;
 }
 
 void Tile::SetHit(bool shot)
 {
+	hit = shot;
+}
+
+bool Tile::GetSpecialTile()
+{
+	return specialTile;
 }
 
 Boat* Tile::GetBoat()
 {
-	return nullptr;
+	return boat;
 }
 
 void Tile::SetBoat(Boat* newBoat)
 {
+	boat = newBoat;
 }

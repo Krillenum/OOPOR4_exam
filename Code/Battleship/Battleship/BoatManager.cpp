@@ -1,8 +1,8 @@
 #include "BoatManager.h"
 
-Boat BoatManager::Init()
+Boat* BoatManager::Init()
 {
-    return Boat();
+    return nullptr;
 }
 
 void BoatManager::PlaceBoat()

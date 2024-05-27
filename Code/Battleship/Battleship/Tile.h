@@ -1,70 +1,75 @@
 #pragma once
-#include "Boat.h"
 #include "BoatManager.h"
 
 class Tile
 {
 public:
 	// PUBLIC FUNCTION -------------------
+	Tile();
 	virtual void SpecialEffect();
 
 	// Getters and Setters
 	bool GetHit();
 	void SetHit(bool shot);
-	Boat* GetBoat();
-	void SetBoat(Boat* newBoat);
+	bool GetSpecialTile();
+	struct Boat* GetBoat();
+	void SetBoat(struct Boat* newBoat);
 
 protected:
 	// Protected variables
 	bool hit;
-	Boat* boat;
+	struct Boat* boat;
+	bool specialTile = false;
 };
 
-class RotationTile : Tile 
+class RotationTile : public Tile 
 {
 public:
 	// Public function
+	RotationTile(class BoatManager* boatManager) : Tile() { specialTile = true; bm = boatManager; };
 	void SpecialEffect();
 
 	//Getters and setters
-	BoatManager* GetBoatManager();
+	class BoatManager* GetBoatManager();
 
 private:
-	BoatManager* bm;
+	class BoatManager* bm;
 };
 
-class AngelTile : Tile
+class AngelTile : public Tile
 {
 public:
 	// Public function
+	AngelTile(class BoatManager* boatManager) : Tile() { specialTile = true; bm = boatManager; };
 	void SpecialEffect();
 
 	//Getters and setters
-	BoatManager* GetBoatManager();
+	class BoatManager* GetBoatManager();
 
 private:
-	BoatManager* bm;
+	class BoatManager* bm;
 };
 
-class MovementTile : Tile
+class MovementTile : public Tile
 {
 public:
 	// Public function
+	MovementTile(class BoatManager* boatManager) : Tile() { specialTile = true; bm = boatManager; };
 	void SpecialEffect();
 
 	//Getters and setters
-	BoatManager* GetBoatManager();
+	class BoatManager* GetBoatManager();
 
 private:
-	BoatManager* bm;
+	class BoatManager* bm;
 };
 
-class PowerTile : Tile
+class PowerTile : public Tile
 {
 	void SpecialEffect();
 };
 
-class MineTile : Tile
+class MineTile : public Tile
 {
 	void SpecialEffect();
 };

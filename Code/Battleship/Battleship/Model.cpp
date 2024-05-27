@@ -3,6 +3,8 @@
 
 Model::Model()
 {
+	Grid newGrid;
+	grid = &newGrid;
 }
 
 void Model::Init()
@@ -23,11 +25,12 @@ void Model::CheckGameState()
 
 bool Model::GetGameOver()
 {
-	return false;
+	return gameOver;
 }
 
 void Model::SetGameOver(bool GameState)
 {
+	gameOver = GameState;
 }
 
 PlayerInfo* Model::GetPlayer()
@@ -47,5 +50,5 @@ PlayerInfo* Model::GetCurrentPlayer()
 
 Grid* Model::GetGrid()
 {
-	return nullptr;
+	return grid;
 }
