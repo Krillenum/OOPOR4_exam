@@ -1,30 +1,24 @@
 #pragma once
 #include "Tile.h"
 #include "BoatManager.h"
-
-struct DoubleArray
-{
-	Tile* arr[10][10];
-};
+#include "2DArray.h"
 
 class Grid
 {
 public:
 	// PUBLIC FUNCTION -------------------
 	Grid();
+	~Grid();
 	void TileReaction();
 	void UpdateTile();
 	void PlaceSpecialTile();
 
 	// Getters and Setters
-	void SetPlayerGrid(Tile* newGrid[10][10]);
-	DoubleArray GetPlayerGrid();
-	void SetPlayerHistory(Tile* newGrid[10][10]);
-	DoubleArray GetPlayerHistory();
-	void SetBotGrid(Tile* newGrid[10][10]);
-	DoubleArray GetBotGrid();
-	void SetBotHistory(Tile* newGrid[10][10]);
-	DoubleArray GetBotHistory();
+	// void SetPlayerGrid(Tile* newGrid[10][10]); DEPRECATED
+	DoubleArray& GetPlayerGrid();
+	DoubleArray& GetPlayerHistory();
+	DoubleArray& GetBotGrid();
+	DoubleArray& GetBotHistory();
 	BoatManager* GetBoatManager();
 
 private:
@@ -37,5 +31,5 @@ private:
 	BoatManager* bm;
 
 	// PRIVATE FUNCTION
-	void initializeGrid(DoubleArray grid);
+	void initializeGrid(DoubleArray& grid);
 };

@@ -139,11 +139,13 @@
     <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="2DArray.h" />
     <ClInclude Include="Boat.h" />
     <ClInclude Include="BoatManager.h" />
     <ClInclude Include="BotAI.h" />
     <ClInclude Include="BotStrategy.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Coordinate.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="PlayerInfo.h" />

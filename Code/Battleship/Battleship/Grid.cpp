@@ -13,12 +13,21 @@ Grid::Grid()
 	initializeGrid(botHistory);
 
 	// TEST --------------------------
-	//tempGrid[6][2]->SetHit(true);
-	//tempGrid[2][8]->SetHit(true);
-	//Boat newBoat = { 2, tempGrid[2][8], true, true, true, nullptr };
-	//tempGrid[2][8]->SetBoat(&newBoat);
-	//tempGrid[4][7] = new MovementTile(bm);
+	playerGrid.arr[1][0]->SetHit(true);
+	playerGrid.arr[2][8]->SetHit(true);
 	// TEST ------------------------
+}
+
+Grid::~Grid()
+{
+	for (int i = 0; i < 10; ++i) {
+		for (int j = 0; j < 10; ++j) {
+			delete playerGrid.arr[i][j];
+			delete playerHistory.arr[i][j];
+			delete botGrid.arr[i][j];
+			delete botHistory.arr[i][j];
+		}
+	}
 }
 
 void Grid::TileReaction()
@@ -33,58 +42,31 @@ void Grid::PlaceSpecialTile()
 {
 }
 
-void Grid::SetPlayerGrid(Tile* newGrid[10][10])
-{
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			playerGrid.arr[i][j] = newGrid[i][j];
-		}
-	}
-}
+//void Grid::SetPlayerGrid(Tile* newGrid[10][10])		DEPRECATED
+//{
+//	for (int i = 0; i < 10; i++) {
+//		for (int j = 0; j < 10; j++) {
+//			playerGrid.arr[i][j] = newGrid[i][j];
+//		}
+//	}
+//}
 
-DoubleArray Grid::GetPlayerGrid()
+DoubleArray& Grid::GetPlayerGrid()
 {
 	return playerGrid;
 }
 
-void Grid::SetPlayerHistory(Tile* newGrid[10][10])
-{
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			playerHistory.arr[i][j] = newGrid[i][j];
-		}
-	}
-}
-
-DoubleArray Grid::GetPlayerHistory()
+DoubleArray& Grid::GetPlayerHistory()
 {
 	return playerHistory;
 }
 
-void Grid::SetBotGrid(Tile* newGrid[10][10])
-{
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			botGrid.arr[i][j] = newGrid[i][j];
-		}
-	}
-}
-
-DoubleArray Grid::GetBotGrid()
+DoubleArray& Grid::GetBotGrid()
 {
 	return botGrid;
 }
 
-void Grid::SetBotHistory(Tile* newGrid[10][10])
-{
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			botHistory.arr[i][j] = newGrid[i][j];
-		}
-	}
-}
-
-DoubleArray Grid::GetBotHistory()
+DoubleArray& Grid::GetBotHistory()
 {
 	return botHistory;
 }
@@ -94,11 +76,12 @@ BoatManager* Grid::GetBoatManager()
 	return nullptr;
 }
 
-void Grid::initializeGrid(DoubleArray grid)
+void Grid::initializeGrid(DoubleArray& grid)
 {
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
-			grid.arr[i][j] = new Tile;
+			Tile* temp = new Tile;
+			grid.arr[i][j] = temp;
 		}
 	}
 }

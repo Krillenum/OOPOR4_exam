@@ -3,12 +3,18 @@
 
 Model::Model()
 {
-	Grid newGrid;
-	grid = &newGrid;
+	grid = new Grid();
+	gameOver = false;
+	shotHistory = true;
+
+	player = nullptr;
+	bot = nullptr;
+	currentPlayer = nullptr;
 }
 
-void Model::Init()
+Model::~Model()
 {
+	delete grid;
 }
 
 void Model::PlaceAllBoats()

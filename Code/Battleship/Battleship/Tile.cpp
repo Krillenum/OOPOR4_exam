@@ -46,6 +46,7 @@ void Tile::SpecialEffect()
 {
 }
 
+
 bool Tile::GetHit()
 {
 	return hit;

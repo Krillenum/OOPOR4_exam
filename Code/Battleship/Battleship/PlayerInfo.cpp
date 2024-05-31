@@ -1,7 +1,10 @@
 #include "PlayerInfo.h"
 
-PlayerInfo::PlayerInfo()
+PlayerInfo::PlayerInfo(bool isBot)
 {
+	bot = isBot;
+	PowerAquired = 0;
+	RemainingBoats = 5;
 }
 
 int PlayerInfo::GetRemainingBoats()

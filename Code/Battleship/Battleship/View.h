@@ -12,8 +12,10 @@ public:
 	// PUBLIC FUNCTION -------------------
 	View(Model* model);
 	void DisplayText();
-	void GridDisplay(DoubleArray grid);
+	void GridDisplay();
 	void ClearDisplay();
+	void SpaceBetweenGrid();
+	void ColorTest();
 
 private:
 	Model* m;
@@ -21,6 +23,7 @@ private:
 };
 
 /* COLOR SCHEME INT:
+	26 -> own boat
 	20 -> shot and miss
 	31 -> no shot
 	64 -> shot and hit

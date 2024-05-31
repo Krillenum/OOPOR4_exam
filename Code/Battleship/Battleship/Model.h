@@ -9,7 +9,7 @@ public:
 	
 	// Setup function
 	Model();
-	void Init();
+	~Model();
 	void PlaceAllBoats();
 
 	// Ingame function

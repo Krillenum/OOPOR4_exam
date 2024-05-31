@@ -3,7 +3,7 @@ class PlayerInfo
 {
 public:
 	// PUBLIC FUNCTION --------------
-	PlayerInfo();
+	PlayerInfo(bool isBot);
 
 	// Getters and Setters
 	int GetRemainingBoats();
@@ -16,5 +16,6 @@ private:
 	// PRIATE VARIABLES
 	int RemainingBoats;
 	int PowerAquired;
+	bool bot;
 };
 
