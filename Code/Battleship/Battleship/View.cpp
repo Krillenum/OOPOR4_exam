@@ -23,14 +23,15 @@ void View::GridDisplay()
 	if (m->GetCurrentPlayer() == m->GetPlayer()) {
 		tempHistory = m->GetGrid()->GetPlayerHistory();
 		tempGrid = m->GetGrid()->GetPlayerGrid();
-		cout << "Player is playing" << endl;
+		SetConsoleTextAttribute(hConsole, 112);
+		cout << "Player is playing" << endl << endl;
 	}
 	else {
 		tempHistory = m->GetGrid()->GetBotHistory();
 		tempGrid = m->GetGrid()->GetBotGrid();
-		cout << "Bot is playing" << endl;
+		SetConsoleTextAttribute(hConsole, 112);
+		cout << "Bot is playing" << endl << endl;
 	}
-	cout << tempGrid.arr[1][0]->GetHit() << endl;
 
 	// First row with indexes
 	SetConsoleTextAttribute(hConsole, 7);
@@ -100,12 +101,21 @@ void View::GridDisplay()
 		SetConsoleTextAttribute(hConsole, 7);
 		cout << endl;
 	}
+	cout << endl;
+
+	for (int i = 0; i < 104; i++) {
+		SetConsoleTextAttribute(hConsole, 7);
+		cout << "-";
+	}
+
+	cout << endl;
 }
 
 void View::ClearDisplay()
 {
 	SetConsoleTextAttribute(hConsole, 7);
 	if (system("CLS")) system("clear");
+	GridDisplay();
 }
 
 void View::SpaceBetweenGrid()
@@ -131,4 +141,37 @@ void View::ColorTest()
 		SetConsoleTextAttribute(hConsole, k);
 		cout << k << " I want to be nice today!" << endl;
 	}
+}
+
+void View::AskCoordinateMove()
+{
+	SetConsoleTextAttribute(hConsole, 7);
+	cout << "Entering a column (1 - 10) and a row (1 - 10) separated by white space." << endl;
+	cout << "Cordinates example : 6 5" << endl;
+	cout << "Type -1 -1 to abort " << endl;
+	cout << ">";
+}
+
+void View::AskBool()
+{
+	SetConsoleTextAttribute(hConsole, 7);
+	cout << "Entering 0 (no) or 1 (yes)." << endl;
+	cout << "Type -1 to abort " << endl;
+	cout << ">";
+}
+
+void View::PlaceBoatInstruction(int length)
+{
+	SetConsoleTextAttribute(hConsole, 7);
+	cout << "Boat with a length of " << length << " needs to be placed." << endl;
+	cout << "You need to enter the coordinate of the boats origin point and then choose a direction" << endl;
+	cout << "The boat can spread from the origin point either toward the right (true) or downwards (false)" << endl;
+}
+
+void View::InvalidInput()
+{
+	SetConsoleTextAttribute(hConsole, 4);
+	cout << "WARNING" << endl;
+	SetConsoleTextAttribute(hConsole, 7);
+	cout << "The boat goes out of bound ! Please pay attention at the length of the boat when placing it." << endl;
 }

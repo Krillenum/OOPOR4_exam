@@ -4,8 +4,7 @@
 
 Grid::Grid()
 {
-	BoatManager newBoatManager;
-	bm = &newBoatManager;
+	bm = new BoatManager();
 
 	initializeGrid(playerGrid);
 	initializeGrid(playerHistory);
@@ -42,15 +41,6 @@ void Grid::PlaceSpecialTile()
 {
 }
 
-//void Grid::SetPlayerGrid(Tile* newGrid[10][10])		DEPRECATED
-//{
-//	for (int i = 0; i < 10; i++) {
-//		for (int j = 0; j < 10; j++) {
-//			playerGrid.arr[i][j] = newGrid[i][j];
-//		}
-//	}
-//}
-
 DoubleArray& Grid::GetPlayerGrid()
 {
 	return playerGrid;
@@ -73,7 +63,7 @@ DoubleArray& Grid::GetBotHistory()
 
 BoatManager* Grid::GetBoatManager()
 {
-	return nullptr;
+	return bm;
 }
 
 void Grid::initializeGrid(DoubleArray& grid)

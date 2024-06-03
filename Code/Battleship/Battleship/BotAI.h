@@ -6,19 +6,19 @@ class BotAI
 {
 public:
 	// PUBLIC FUNCTION -------------------
-	BotAI(Model* model);
+	BotAI(class Model* model);
 	void CallShoot();
 	void RandomMove();
 	void RandomRotate();
 	void RandomRevive();
 
 	// Getters and Setters
-	BotStrategy* GetDifficulty();
+	class BotStrategy* GetDifficulty();
 
 private:
 	// PRIATE VARIABLES
-	BotStrategy* difficulty;
-	Model* m;
+	class BotStrategy* difficulty;
+	class Model* m;
 
 };
 

@@ -14,21 +14,20 @@ public:
 	void PlaceSpecialTile();
 
 	// Getters and Setters
-	// void SetPlayerGrid(Tile* newGrid[10][10]); DEPRECATED
-	DoubleArray& GetPlayerGrid();
-	DoubleArray& GetPlayerHistory();
-	DoubleArray& GetBotGrid();
-	DoubleArray& GetBotHistory();
-	BoatManager* GetBoatManager();
+	struct DoubleArray& GetPlayerGrid();
+	struct DoubleArray& GetPlayerHistory();
+	struct DoubleArray& GetBotGrid();
+	struct DoubleArray& GetBotHistory();
+	class BoatManager* GetBoatManager();
 
 private:
 	// PRIVATE VARIABLES
-	DoubleArray playerGrid;
-	DoubleArray playerHistory;
-	DoubleArray botGrid;
-	DoubleArray botHistory;
+	struct DoubleArray playerGrid;
+	struct DoubleArray playerHistory;
+	struct DoubleArray botGrid;
+	struct DoubleArray botHistory;
 
-	BoatManager* bm;
+	class BoatManager* bm;
 
 	// PRIVATE FUNCTION
 	void initializeGrid(DoubleArray& grid);

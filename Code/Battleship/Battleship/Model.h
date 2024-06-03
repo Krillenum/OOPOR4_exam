@@ -10,7 +10,7 @@ public:
 	// Setup function
 	Model();
 	~Model();
-	void PlaceAllBoats();
+	void PlaceAllBoats(class Controller c);
 
 	// Ingame function
 	void TileShot();
@@ -19,10 +19,11 @@ public:
 	// Getters and Setters
 	bool GetGameOver();
 	void SetGameOver(bool GameState);
-	PlayerInfo* GetPlayer();
-	PlayerInfo* GetBot();
-	PlayerInfo* GetCurrentPlayer();
-	Grid* GetGrid();
+	class PlayerInfo* GetPlayer();
+	class PlayerInfo* GetBot();
+	class PlayerInfo* GetCurrentPlayer();
+	void SetCurrentPlayer();
+	class Grid* GetGrid();
 
 private:
 	// PRIVATE VARIABLES
@@ -34,11 +35,11 @@ private:
 	bool gameOver;
 
 	// Information saved for both players (human & AI), as well as who is playing during this specific turn
-	PlayerInfo* player;
-	PlayerInfo* bot;
-	PlayerInfo* currentPlayer;
+	class PlayerInfo* player;
+	class PlayerInfo* bot;
+	class PlayerInfo* currentPlayer;
 
 	// grid
-	Grid* grid;
+	class Grid* grid;
 };
 

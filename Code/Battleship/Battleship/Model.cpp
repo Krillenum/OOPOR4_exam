@@ -17,8 +17,10 @@ Model::~Model()
 	delete grid;
 }
 
-void Model::PlaceAllBoats()
+void Model::PlaceAllBoats(Controller c)
 {
+	grid->GetBoatManager()->SetPlayerBoats(c, GetPlayer(), grid->GetPlayerGrid());
+	// Set bot boats too
 }
 
 void Model::TileShot()
@@ -52,6 +54,11 @@ PlayerInfo* Model::GetBot()
 PlayerInfo* Model::GetCurrentPlayer()
 {
 	return nullptr;
+}
+
+void Model::SetCurrentPlayer()
+{
+	currentPlayer = (currentPlayer == player) ? bot : player;
 }
 
 Grid* Model::GetGrid()

@@ -10,15 +10,19 @@ class View
 {
 public:
 	// PUBLIC FUNCTION -------------------
-	View(Model* model);
+	View(class Model* model);
 	void DisplayText();
 	void GridDisplay();
 	void ClearDisplay();
 	void SpaceBetweenGrid();
 	void ColorTest();
+	void AskCoordinateMove();
+	void AskBool();
+	void PlaceBoatInstruction(int length);
+	void InvalidInput();
 
 private:
-	Model* m;
+	class Model* m;
 	HANDLE hConsole;
 };
 

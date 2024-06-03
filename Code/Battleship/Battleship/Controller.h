@@ -3,6 +3,9 @@
 #include "View.h"
 #include "BotAI.h"
 #include <string>
+#include <iostream>
+#include <sstream>
+#include "Coordinate.h"
 
 using namespace std;
 
@@ -10,19 +13,24 @@ class Controller
 {
 public:
 	// PUBLIC FUNCTION -------------------
-	Controller(Model* model, View* view);
+	Controller(class Model* model, class View* view);
 	void Setup();
 	void PlayGame();
-	string GetPlayerInput();
+	void removeWhiteSpace(string& inputLine);
+	bool ValidCoordinate(struct coordinate& coord);
+	bool GetInputCoordinate(struct coordinate& coord);
+	bool ValidBool(bool& b);
+	bool GetInputBool(bool& b);
 	void ExitGame();
+	class View* GetView();
 
 	// Getters and Setters
-	BotAI* GetBot();
+	class BotAI* GetBot();
 
 private:
 	// PRIATE VARIABLES
-	Model* m;
-	View* v;
-	BotAI* bot;
+	class Model* m;
+	class View* v;
+	class BotAI* bot;
 };
 
